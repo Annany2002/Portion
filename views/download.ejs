@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+</head>
+
+<body>
+    <% if (locals.error) {%>
+        <%= locals.error %>
+            <% } else {%>
+                <h2>Your file is ready to download</h2>
+                <div class="download">
+                    <h4>
+                        <%= fileName %>
+                    </h4>
+                    <small>
+                        <%= parseInt(fileSize/100) %> KB
+                    </small>
+                </div>
+                <div>
+                    <a href="<%= downloadLink %>">Download</a>
+                </div>
+                <% } %>
+</body>
+
+</html>
